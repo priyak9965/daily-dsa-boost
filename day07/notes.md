@@ -1,1 +1,1 @@
-#finding the range for number
+# Finding the range for number
