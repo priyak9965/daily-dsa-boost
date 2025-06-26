@@ -65,3 +65,27 @@ class Solution {
         return rev;
     }
 }
+
+
+//solution without using hardcode : Overflow Detection via Reversal Logic
+
+class Solution {
+    public int reverse(int x) {
+        int rev = 0;
+
+        while (x != 0) {
+            int digit = x % 10;
+            int newRev = rev * 10 + digit;
+
+            // Overflow detected
+            if ((newRev - digit) / 10 != rev)
+                return 0;
+
+            rev = newRev;
+            x /= 10;
+        }
+
+        return rev;
+    }
+}
+
