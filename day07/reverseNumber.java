@@ -24,7 +24,7 @@ Constraints:
 
 class Solution {
     public int reverse(int x) {
-        int num = Math.abs(x); 
+        int num = Math.abs(x);  // using this can overflow when we are taking the absolute of -2^31, there is no -2^31 exit in +ve side 
         
         int rev = 0; 
         
@@ -41,5 +41,27 @@ class Solution {
         }
         
         return (x < 0) ? (-rev) : rev;
+    }
+}
+
+
+//correct way to keep the 32 bit integer check 
+class Solution {
+    public int reverse(int x) {
+        int rev = 0;
+
+        while (x != 0) {
+            int digit = x % 10;
+            x /= 10;
+
+            if (rev > Integer.MAX_VALUE / 10 || 
+                (rev == Integer.MAX_VALUE / 10 && digit > 7)) return 0; 
+            if (rev < Integer.MIN_VALUE / 10 || 
+                (rev == Integer.MIN_VALUE / 10 && digit < -8)) return 0;
+
+            rev = rev * 10 + digit;
+        }
+
+        return rev;
     }
 }
