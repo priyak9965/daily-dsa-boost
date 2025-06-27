@@ -40,3 +40,32 @@ class Solution {
     }
 }
 //this solution is in O(n) time complexity , has to reduce to O(sqrt(n)) time complexity
+
+//with O(sqrt(n)) complexity ,using list to first add the number in half time and the using collection's sort method to print the numbers in sorted order.
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+
+
+class Solution {
+    public static void print_divisors(int n) {
+        // code here
+        List<Integer> x = new ArrayList<>();
+        for( int i = 1; i*i <=n; i ++){
+            if(n%i == 0){
+               if((n/i)!=i){
+                    x.add(i);
+                x.add(n/i);
+               }
+               else{
+                   x.add(i);
+               }
+            }
+        }
+        
+        Collections.sort(x);
+        for (int val : x) {
+    System.out.print(val + " ");
+    }
+}
+}
