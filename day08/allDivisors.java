@@ -39,3 +39,4 @@ class Solution {
         }
     }
 }
+//this solution is in O(n) time complexity , has to reduce to O(sqrt(n)) time complexity
