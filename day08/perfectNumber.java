@@ -31,3 +31,22 @@ class Solution {
         return (sum == num);
     }
 } // solution with O(n) time complexity, has to reduce it to O(sqrt(n));
+
+class Solution { //solution with O(sqrt(n)) and better time complexity and space complexity, same is for divisor problem
+    public boolean checkPerfectNumber(int num) {
+        if(num<=1){
+            return false;
+        }
+        int sum = 1;
+        int sqrt = (int)Math.sqrt(num);
+        for(int i = 2; i <=sqrt; i ++){
+            if(num%i == 0){
+                sum = sum + i;
+                if((num/i) != i){
+                    sum= sum+(num/i);
+                }
+            }
+        }
+        return (sum == num);
+    }
+}
