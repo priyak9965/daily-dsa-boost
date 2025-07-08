@@ -35,3 +35,5 @@ class Solution {
         return isPowerOfTwo(n / 2);
     }
 }
+
+//have to do this without using loops or recursion
