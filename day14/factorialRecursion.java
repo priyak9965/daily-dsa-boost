@@ -6,20 +6,11 @@ Note: X  is always a positive number. */
 
 class Solution {
     public int trailingZeroes(int n) {
-        int fact = 1;
-        int count = 0;
-        for (int i = 1; i<=n ; i++){
-            fact = fact * i;
-        
-        }
-    while(fact>0){
-        if(fact%10 == 0){
-            count ++;
-            fact= fact/10;
-        }
-        else return count;
-    } 
-    return count; 
-        
+        int count =0;
+            while(n>0){
+                n=n/5;
+                count = count +n;
+            }
+        return count ;
     }
 }
