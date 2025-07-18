@@ -14,3 +14,8 @@ class Solution {
         return count ;
     }
 }
+
+
+// This above is optimal solution with  O(log5(n)), if you go for calculation of factorial first and then finding the trailing zeroes using loop then it will take
+// you forever to calculate to higher number of values and also if you have taken int as datatype then the factorial will overflow with the actual size of the integer numbers.
+//eg: for 13, factorial is 6,227,020,800 which is bigger than integer limit so the answer that will come is  1,932,053,504 which is due to overflow and wrapping behaviour.
