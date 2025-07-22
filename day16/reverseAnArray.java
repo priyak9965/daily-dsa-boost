@@ -22,9 +22,9 @@ s[i] is a printable ascii character.*/
 class Solution {
     public void reverseString(char[] s) {
         int n = s.length;
-        for(int i = 0; i<n/2; i++){
+        for(int i = 0; i<n/2; i++){ //the i<=n/2 will not work as for equal to case it will go beyond half in even case and swap already swapped value
             char x = s[i];
-            s[i] = s[n-i-1];
+            s[i] = s[n-i-1]; // here the first pointer will start from i and the pointer from end will start from n-i-1
             s[n-i-1]= x;
         }
     }
